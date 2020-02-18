@@ -6,6 +6,17 @@ class Player {
     this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
   }
 
+prettyTime(timeInSeconds){
+  let min = Math.floor((timeInSeconds / 60));
+  let sec = Math.floor(timeInSeconds - (min * 60));
+  if (min < 10) {
+    min = "0" + min;
+	}
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
+  return min + ':' + sec;
+}
   getDuration() {
     return this.soundObject.getDuration();
   }
